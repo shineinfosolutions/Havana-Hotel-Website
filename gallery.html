@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8">
+ <title>Hotel Havan Gorakhpur | Gallery</title>
+ <meta name="description" content="Explore the gallery of Hotel Havan, Gorakhpur. View our comfortable rooms, clean interiors, modern facilities, and welcoming atmosphere before booking your stay.">
+  <!-- Stylesheets -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/style-dark.css" rel="stylesheet">
+  <link href="css/flatpickr.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+  <link rel="stylesheet" type="text/css" href="css/slick.css">
+
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="images/favicon.png" type="image/x-icon">
+  <!-- Responsive -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
+  <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+   <style>
+        .filter-bar button {
+            margin: 5px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .custom-btn {
+            background-color: #dc3545;
+            /* Bootstrap's btn-danger color */
+            color: white;
+            border: none;
+        }
+
+
+
+        .filter-bar {
+            margin: 20px 0;
+        }
+
+        .filter-bar .btn {
+            margin-right: 10px;
+        }
+
+        .gallery-img {
+            width: 100%;
+     
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .gallery-item {
+            display: none;
+        }
+
+        .gallery-item.show {
+            display: block;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+        }
+
+        .modal-content {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+        }
+
+        .modal-image {
+            max-width: 90%;
+            max-height: 90vh;
+            object-fit: contain;
+            background: transparent;
+            box-shadow: 0 0 50px rgba(0,0,0,0.8);
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10000;
+            background: rgba(0,0,0,0.5);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close:hover {
+            color: #bbb;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: 60px;
+            height: 60px;
+            margin-top: -30px;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            background: rgba(0,0,0,0.6);
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            user-select: none;
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .next {
+            right: 30px;
+        }
+
+        .prev {
+            left: 30px;
+        }
+
+        .prev:hover, .next:hover {
+            background: rgba(0,0,0,0.8);
+            border-color: rgba(255,255,255,0.6);
+            transform: scale(1.1);
+        }
+
+        .gallery-img {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+
+<body>
+  <div class="page-wrapper">
+
+
+
+    <!-- Main Header-->
+    <header class="main-header header-style-two">
+      <div class="auto-container">
+        <div class="header-top">
+          <div class="inner-box">
+            <!-- top-left -->
+            <div class="top-left">
+             <span>
+  <a href="tel:+919621051727" style="color:#adadad; text-decoration:none;">
+    <i class="fas fa-mobile-alt" style="color:#adadad;"></i>
+    +91 9621051727
+  </a>
+</span>
+
+            </div>
+            <!-- Top-right -->
+            <div class="top-right">
+               <ul class="social-icon-one">
+               
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Main box -->
+        <div class="main-box">
+          <div class="logo-box">
+
+            <div class="logo"><a href="#">
+                
+            <a href="index.html"><img src="images/logo havana.PNG" width="120px" height="50px"  alt="logo"></a>
+        </div>
+              
+          </div>
+          <!--Nav Box-->
+          <div class="nav-outer">
+            <nav class="nav main-menu">
+              <ul class="navigation">
+                <li ><a href="index.html">Home</a>
+                  <!--- <ul>
+                    <li><a href="index.html">Home page 01</a></li>
+                    <li><a href="index-2.html">Home page 02</a></li>
+                    <li class="dropdown"><a href="#">New Home</a>
+                      <ul>
+                        <li><a href="index-3.html">Home page 03</a></li>
+                        <li><a href="index-4.html">Home page 04</a></li>
+                        <li><a href="index-5.html">Home page 05</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown"><a href="#">Single Styles</a>
+                      <ul>
+                        <li><a href="index-1-single.html">Single Style One</a></li>
+                        <li><a href="index-2-single.html">Single Style Two</a></li>
+                        <li><a href="index-3-single.html">Single Style Three</a></li>
+                        <li><a href="index-4-single.html">Single Style Four</a></li>
+                        <li><a href="index-5-single.html">Single Style Five</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown"><a href="#">Dark Styles</a>
+                      <ul>
+                        <li><a href="index-1-dark.html">Dark Style One</a></li>
+                        <li><a href="index-2-dark.html">Dark Style Two</a></li>
+                        <li><a href="index-3-dark.html">Dark Style Three</a></li>
+                        <li><a href="index-4-dark.html">Dark Style Four</a></li>
+                        <li><a href="index-5-dark.html">Dark Style Five</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="index-1-rtl.html">RTL Style One</a></li> 
+                  </ul>-->
+                </li>
+
+                <li><a href="page-about.html">About</a> </li>
+
+                   <li class="dropdown"><a href="page-rooms.html">Rooms</a>
+                  <ul>
+                    <li><a href="super-premium-deluxe-room.html">Super Premium Deluxe Room</a></li>
+                    <li><a href="premium-deluxe-twin-room.html">Premium Deluxe Twin Room</a></li>
+                    <li><a href="premium-deluxe-room.html">Premium Deluxe Room</a></li>
+                      <li><a href="super-standard-room.html">Super Standard Room</a></li>
+                  </ul>
+                </li>
+                <li><a href="gallery.html">Gallery</a>
+                  <!--- <ul>
+                    <li><a href="page-about.html">About</a></li>
+                    <li><a href="page-contact.html">Contact</a></li>
+                    <li><a href="page-faq.html">Faq</a></li>
+                    <li><a href="page-pricing.html">Pricing</a></li>
+                    <li><a href="page-testimonial.html">Testimonials</a></li>
+                    <li><a href="page-404.html">404</a></li>
+                    <li class="dropdown"><a href="#">Team</a>
+                      <ul>
+                        <li><a href="page-team.html">Team List</a></li>
+                        <li><a href="page-team-details.html">Team Details</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown"><a href="#">Shop</a>
+                      <ul>
+                        <li><a href="shop-products.html">Products</a></li>
+                        <li><a href="shop-products-sidebar.html">Products with Sidebar</a></li>
+                        <li><a href="shop-product-details.html">Product Details</a></li>
+                        <li><a href="shop-cart.html">Cart</a></li>
+                        <li><a href="shop-checkout.html">Checkout</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="elements.html">Elements</a></li>
+                  </ul> -->
+                </li>
+                <!--- <li class="dropdown"><a href="#">News</a>
+                  <ul>
+                    <li><a href="news-grid.html">News Grid</a></li>
+                    <li><a href="news-details.html">News Details</a></li>
+                  </ul>
+                </li> -->
+                <li><a href="page-contact.html">Contact</a></li>
+              </ul>
+            </nav>
+            <!-- Main Menu End-->
+          </div>
+          <!---->
+          <div class="outer-box">
+            <!---  <button class="search-btn">
+              <img src="images/icons/search.png" alt="" />
+            </button> -->
+            <div class="mobile-nav-toggler"><i class="icon fa fa-bars"></i></div>
+            <!-- Mobile Nav toggler -->
+          </div>
+        </div>
+        <!-- Mobile Menu  -->
+        <div class="mobile-menu">
+          <div class="menu-backdrop"></div>
+          <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+          <nav class="menu-box">
+            <div class="upper-box">
+              <div class="logo">
+                 <a href="index.html"><img src="images/logo havana.PNG" width="120px" height="50px"  alt="logo"></a>
+                </div>
+              <!----    <div class="nav-logo"><a href="#"><img src="images/logo-22.png" alt=""></a></div> -->
+              <div class="close-btn"><i class="icon fa fa-times"></i></div>
+            </div>
+            <ul class="navigation clearfix">
+              <!--Keep This Empty / Menu will come through Javascript-->
+            </ul>
+            <ul class="contact-list-one">
+              <li>
+                <!-- Contact Info Box -->
+                <div class="contact-info-box">
+                  <i class="icon lnr-icon-phone-handset"></i>
+                  <span class="title">Call Now</span>
+                                   <a href="tel:+919621051727">+919621051727</a>
+                </div>
+              </li>
+                       <li>
+  <!-- Contact Info Box -->
+  <div class="contact-info-box">
+    <span class="icon lnr-icon-envelope1"></span>
+    <span class="title">Send Email</span>
+    <a href="mailto:contact@hotelhavana.in">contact@hotelhavana.in</a>
+  </div>
+</li>
+              
+            </ul>
+            <ul class="social-links">
+              <li><i class="fa-brands fa-instagram"></i></li>
+              <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+              <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+              <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+          </nav>
+        </div><!-- End Mobile Menu -->
+        <!-- Header Search -->
+        <div class="search-popup">
+          <span class="search-back-drop"></span>
+          <button class="close-search"><span class="fa fa-times"></span></button>
+          <div class="search-inner">
+            <form method="post" action="https://html.kodesolution.com/2023/hoexr-html/index.html">
+              <div class="form-group">
+                <input type="search" name="search-field" value="" placeholder="Search..." required="">
+                <button type="submit"><i class="fa fa-search"></i></button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- End Header Search -->
+
+        <!-- Sticky Header  -->
+        <div class="sticky-header">
+          <div class="auto-container">
+            <div class="inner-container">
+              <!--Logo-->
+
+               <div class="logo">
+                
+            <a href="index.html"><img src="images/logo havana.PNG" width="120px" height="50px"  alt="logo"></a>
+        </div>
+              <!----     <div class="logo">
+                <a href="index.html"><img src="images/logo-22.png" alt=""></a>
+              </div> -->
+              <!--Right Col-->
+              <div class="nav-outer">
+                <!-- Main Menu -->
+                <nav class="main-menu">
+                  <div class="navbar-collapse show collapse clearfix">
+                    <ul class="navigation clearfix">
+                      <!--Keep This Empty / Menu will come through Javascript-->
+                    </ul>
+                  </div>
+                </nav><!-- Main Menu End-->
+                <!--Mobile Navigation Toggler-->
+                <div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
+              </div>
+            </div>
+          </div>
+        </div><!-- End Sticky Menu -->
+      </div>
+    </header>
+    <!--End Main Header -->
+
+    <!-- banner section two -->
+    <section class="page-title" style="background-image: url(images/background/page-title-bg.png);">
+	<div class="auto-container">
+		<div class="title-outer text-center">
+			<h1 class="title">Gallery</h1>
+			<ul class="page-breadcrumb">
+				<li><a href="index.html">Home</a></li>
+				<li>Gallery</li>
+			</ul>
+		</div>
+	</div>
+</section>
+    <!-- End banner section -->
+
+   
+    <!-- End food section -->
+
+    <!-- call-to-action -->
+    <section class="call-to-action pt-0">
+    
+        <!-- Page Title -->
+        <!-- <div class=" text-center mt-30">
+            <h2 class="fw-bold">Gallery</h2>
+        </div> -->
+
+        <!-- Filter Buttons -->
+       
+        <!-- Gallery Grid -->
+
+
+        <div class="containerfluid m-5">
+            <div class="row g-4" id="gallery">
+                <!-- deluxe -->
+
+                <div class="col-md-4 gallery-item deluxe show">
+                    <img src="images/gallery/1.jpg" loading="lazy" class="gallery-img" alt="Room 1" onclick="openModal();currentSlide(1)">
+                </div>
+                <div class="col-md-4 gallery-item deluxe show">
+                    <img src="images/gallery/2.jpg" loading="lazy" class="gallery-img" alt="Room 2" onclick="openModal();currentSlide(2)">
+                </div>
+                <div class="col-md-4 gallery-item deluxe show">
+                    <img src="images/gallery/3.jpg" loading="lazy" class="gallery-img" alt="Room 3" onclick="openModal();currentSlide(3)">
+                </div>
+                <div class="col-md-4 gallery-item deluxe show">
+                    <img src="images/gallery/4.jpg" loading="lazy" class="gallery-img" alt="Room 4" onclick="openModal();currentSlide(4)">
+                </div>
+
+                <!-- Executive room -->
+                <div class="col-md-4 gallery-item executive show">
+                    <img src="images/gallery/5.JPG" loading="lazy" class="gallery-img" alt="Dining 1" onclick="openModal();currentSlide(5)">
+                </div>
+                <div class="col-md-4 gallery-item executive show">
+                    <img src="images/gallery/6.JPG" loading="lazy" class="gallery-img" alt="Dining 2" onclick="openModal();currentSlide(6)">
+                </div>
+                <div class="col-md-4 gallery-item executive show">
+                    <img src="images/gallery/7.JPG" loading="lazy" class="gallery-img" alt="Dining 3" onclick="openModal();currentSlide(7)">
+                </div>
+                <div class="col-md-4 gallery-item executive show">
+                    <img src="images/gallery/8.JPG" loading="lazy" class="gallery-img" alt="Dining 4" onclick="openModal();currentSlide(8)">
+                </div>
+                <div class="col-md-4 gallery-item executive show">
+                    <img src="images/gallery/9.JPG" loading="lazy" class="gallery-img" alt="Dining 5" onclick="openModal();currentSlide(9)">
+                </div>
+
+                <!-- super executive -->
+                <div class="col-md-4 gallery-item super show">
+                    <img src="images/gallery/10.JPG" class="gallery-img" alt="Hotel 1" onclick="openModal();currentSlide(10)">
+                </div>
+                <div class="col-md-4 gallery-item super show">
+                    <img src="images/gallery/11.JPG" class="gallery-img" alt="Hotel 2" onclick="openModal();currentSlide(11)">
+                </div>
+                <div class="col-md-4 gallery-item super show">
+                    <img src="images/gallery/12.JPG" class="gallery-img" alt="Hotel 3" onclick="openModal();currentSlide(12)">
+                </div>
+                <div class="col-md-4 gallery-item super show">
+                    <img src="images/gallery/14.JPG" class="gallery-img" alt="Hotel 4" onclick="openModal();currentSlide(13)">
+                </div>
+                <div class="col-md-4 gallery-item super show">
+                    <img src="images/gallery/8.JPG" class="gallery-img" alt="Hotel 5" onclick="openModal();currentSlide(14)">
+                </div>
+                <div class="col-md-4 gallery-item super show">
+                    <img src="images/gallery/5.JPG" class="gallery-img" alt="Hotel 6" onclick="openModal();currentSlide(15)">
+                </div>
+
+                <!-- hotel -->
+
+
+
+
+<!-- 
+
+                <div class="col-md-4 gallery-item hotel show">
+                    <video class="gallery-img" controls autoplay loop muted playsinline>
+                        <source src="images/gallery/video/video 1.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="col-md-4 gallery-item hotel show">
+                    <video class="gallery-img" controls autoplay loop muted playsinline>
+
+                        <source src="images/gallery/video/video6.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="col-md-4 gallery-item hotel show">
+                    <video class="gallery-img" controls autoplay loop muted playsinline>
+                        <source src="images/gallery/video/video7.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+
+                <div class="col-md-4 gallery-item hotel show">
+                    <video class="gallery-img" controls autoplay loop muted playsinline>
+                        <source src="images/gallery/video/video2.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="col-md-4 gallery-item hotel show">
+                    <video class="gallery-img" controls autoplay loop muted playsinline>
+                        <source src="images/gallery/video/video3.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="col-md-4 gallery-item hotel show">
+                    <video class="gallery-img" controls autoplay loop muted playsinline>
+                        <source src="images/gallery/video/video4.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="col-md-4 gallery-item hotel show">
+                    <video class="gallery-img" controls autoplay loop muted playsinline>
+                        <source src="images/gallery/video/video5.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="col-md-4 gallery-item hotel show">
+                    <video class="gallery-img" controls autoplay loop muted playsinline>
+                        <source src="images/gallery/video/video8.mp4" type="video/mp4">
+                    </video>
+                </div> -->
+
+
+    </section>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+            <img class="modal-image" id="modalImg">
+            <button class="next" onclick="plusSlides(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <!-- offer-banner -->
+    <!---- <section class="offer-banner wow slideInUp">
+      <div class="auto-container">
+        <div class="outer-box">
+          <div class="row">
+            <! content-column --
+            <div class="content-colum col-lg-8 col-md-12 col-sm-12">
+              <div class="inner-column">
+                <div class="content-box"> <span>Risus commodo viverra accumsan lacus vel facilisis. </span>
+                  <h6 class="title">Special Holiday Offer</h6>
+                </div>
+              </div>
+            </div>
+            <btn-column --
+            <div class="btn-column col-lg-4 col-md-12 col-sm-12">
+              <div class="inner-column"> <a href="page-contact.html" class="read-more">Book Now</a> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <!-- End offer section -->
+
+    <!-- news-section two -->
+    <!---- <section class="news-section-two">
+      <div class="auto-container">
+        <div class="sec-title text-center wow fadeInUp"> <span class="sub-title">Hoexr Hotel News</span>
+          <h2>Latest News Update</h2>
+        </div>
+        <div class="row">
+          - News Block --
+          <div class="news-block-two col-lg-4 col-sm-6 wow fadeInUp">
+            <div class="inner-box wow fadeInLeft">
+              <div class="image-box">
+                <figure class="image overlay-anim"><a href="news-details.html"><img src="images/resource/news2-1.jpg"
+                      alt=""></a></figure>
+                <span class="date">DEC<br>
+                  <small>20</small></span>
+              </div>
+              <div class="content-box">
+                <div class="info-box">
+                  <figure class="thumb"><a href="news-details.html"><img src="images/resource/news-thumb.jpg"
+                        alt=""></a></figure>
+                  <span class="designation">Jonica Michel</span>
+                </div>
+                <h4 class="title"><a href="news-details.html">Retore Lighting Design <br> in The Hotel</a></h4>
+                <div class="btn-box">
+                  <span><i class="icon fa fa-comments"></i>0 Comments</span>
+                  <a href="news-details.html" class="read-more">Read More<i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          - News Block -
+          <div class="news-block-two col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="300ms">
+            <div class="inner-box wow fadeInLeft" data-wow-delay="200ms">
+              <div class="image-box">
+                <figure class="image overlay-anim"><a href="news-details.html"><img src="images/resource/news-2.jpg"
+                      alt=""></a></figure>
+                <span class="date">DEC<br>
+                  <small>20</small></span>
+              </div>
+              <div class="content-box">
+                <div class="info-box">
+                  <figure class="thumb"><a href="news-details.html"><img src="images/resource/news-thumb.jpg"
+                        alt=""></a></figure>
+                  <span class="designation">Jonica Michel</span>
+                </div>
+                <h4 class="title"><a href="news-details.html">Swiming Benefits is <br> Good For Your Health</a></h4>
+                <div class="btn-box">
+                  <span><i class="icon fa fa-comments"></i>0 Comments</span>
+                  <a href="news-details.html" class="read-more">Read More<i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!News Block --
+          <div class="news-block-two col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="600ms">
+            <div class="inner-box wow fadeInLeft" data-wow-delay="300ms">
+              <div class="image-box">
+                <figure class="image overlay-anim"><a href="news-details.html"><img src="images/resource/news-3.jpg"
+                      alt=""></a></figure>
+                <span class="date">DEC<br>
+                  <small>20</small></span>
+              </div>
+              <div class="content-box">
+                <div class="info-box">
+                  <figure class="thumb"><a href="news-details.html"><img src="images/resource/news-thumb.jpg"
+                        alt=""></a></figure>
+                  <span class="designation">Jonica Michel</span>
+                </div>
+                <h4 class="title"><a href="news-details.html">Avalible Now Health <br> Club For Your Fitness </a></h4>
+                <div class="btn-box">
+                  <span><i class="icon fa fa-comments"></i>0 Comments</span>
+                  <a href="news-details.html" class="read-more">Read More<i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <!-- End news section -->
+
+    <!-- client-section two -->
+    <!--<section class="client-section-two">
+      <div class="auto-container">
+        <div class="client-slider wow fadeInUp">
+          < client-block -
+          <div class="client-block-two">
+            <div class="inner-box">
+              <figure class="image"><a href="#"><img src="images/resource/client1-1.png" alt=""></a></figure>
+            </div>
+          </div>
+          <- client-block --
+          <div class="client-block-two">
+            <div class="inner-box">
+              <figure class="image"><a href="#"><img src="images/resource/client1-2.png" alt=""></a></figure>
+            </div>
+          </div>
+          <-- client-block --
+          <div class="client-block-two">
+            <div class="inner-box">
+              <figure class="image"><a href="#"><img src="images/resource/client1-3.png" alt=""></a></figure>
+            </div>
+          </div
+          <- client-block --
+          <div class="client-block-two">
+            <div class="inner-box">
+              <figure class="image"><a href="#"><img src="images/resource/client1-4.png" alt=""></a></figure>
+            </div>
+          </div>
+          <- client-block --
+          <div class="client-block-two">
+            <div class="inner-box">
+              <figure class="image"><a href="#"><img src="images/resource/client1-5.png" alt=""></a></figure>
+            </div>
+          </div>
+          <!- client-block --
+          <div class="client-block-two">
+            <div class="inner-box">
+              <figure class="image"><a href="#"><img src="images/resource/client1-1.png" alt=""></a></figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <!-- End client section -->
+
+    <!-- Main Footer -->
+    <footer class="main-footer footer-style-two">
+      <!-- Widgets Section -->
+      <div class="widgets-section">
+        <div class="auto-container">
+          <div class="row">
+            <!-- Footer Column -->
+            <div class="footer-column col-lg-4 col-sm-6">
+              <div class="footer-widget about-widget wow fadeInLeft">
+                <div class="widget-content">
+                  <div class="logo">
+                   <a href="index.html"><img src="images/logo havana.PNG" width="150px" height="60px"  alt="logo"></a>
+                 </div>
+
+                  <!----   <div class="logo"><a href="#"> <img src="images/logo-22.png" alt=""></a></div>-->
+                  <div class="text"> A warm welcome to Hotel Havana,<br> At Hotel Elementum, you will experience<br> a unique blend of comfort and elegance. </div>
+                  <ul class="social-icon-two">
+                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i> </a></li>
+                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Footer Column -->
+            <div class="footer-column col-lg-4 col-sm-6 mb-0">
+              <div class="footer-widget links-widget wow fadeInLeft" data-wow-delay="200ms">
+                <h4 class="widget-title">Services Links</h4>
+                <div class="widget-content">
+                  <ul class="user-links">
+                    <li><a href="index.html"><i class="fa-solid fa-crosshairs"></i>Home</a></li>
+                    <!----  <li><a href="#"><i class="fa-solid fa-crosshairs"></i>Suites</a></li> -->
+                    <!----  <li><a href="#"><i class="fa-solid fa-crosshairs"></i>Restaurant</a></li> -->
+                    <!----<li><a href="#"><i class="fa-solid fa-crosshairs"></i>News</a></li>-->
+                    <li><a href="page-about.html"><i class="fa-solid fa-crosshairs"></i>About Hotel</a></li>
+                    <li><a href="page-rooms.html"><i class="fa-solid fa-crosshairs"></i>Rooms</a></li>
+                    <li><a href="#"><i class="fa-solid fa-crosshairs"></i>Gallery</a></li>
+                    <li><a href="page-contact.html"><i class="fa-solid fa-crosshairs"></i>Contact</a></li>
+                  </ul>
+                  <!----  <ul class="user-links">
+                    <li><a href="#"><i class="fa-solid fa-crosshairs"></i>Rooms</a></li>
+                    <li><a href="#"><i class="fa-solid fa-crosshairs"></i>Wellness</a></li>
+                    <li><a href="#"><i class="fa-solid fa-crosshairs"></i>Spa</a></li>
+                    <li><a href="#"><i class="fa-solid fa-crosshairs"></i>Gallery</a></li>
+                    <li><a href="#"><i class="fa-solid fa-crosshairs"></i>Contact</a></li>
+                  </ul> -->
+                </div>
+              </div>
+            </div>
+            <!-- footer column -->
+            <!----  <div class="footer-column col-lg-3 col-sm-6">
+              <div class="footer-widget news-widget wow fadeInLeft" data-wow-delay="300ms">
+                <h4 class="widget-title">Latest News</h4>
+                <div class="news-info">
+                  <figure class="image overlay-anim"><a href="#"><img src="images/resource/news-info-1.jpg" alt=""></a>
+                  </figure>
+                  <h6 class="title"><a href="#">Quisque at Felis <br>Port Titordga</a></h6>
+                  <span class="date">14 May 2023</span>
+                </div>
+                <div class="news-info">
+                  <figure class="image overlay-anim"><a href="#"><img src="images/resource/news-info-2.jpg" alt=""></a>
+                  </figure>
+                  <h6 class="title"><a href="#">Tips For Picking <br>Vacation</a></h6>
+                  <span class="date">14 May 2023</span>
+                </div>
+              </div>
+            </div> -->
+            <!-- Footer Column -->
+            <div class="footer-column col-lg-4 col-sm-6">
+              <div class="footer-widget blog-widget wow fadeInLeft" data-wow-delay="400ms">
+                <h4 class="widget-title">Information</h4>
+                <div class="widget-content">
+                  <!-- Recent Post -->
+                  <article class="recent-post">
+                    <div class="inner">
+                      <div class="post-info"><i class="fas fa-phone"></i> +919621051727</div>
+                    <div class="post-info">
+  <i class="fa fa-envelope"></i> 
+  <a href="mailto:contact@hotelhavana.in">contact@hotelhavana.in</a>
+</div>
+                                       <div class="post-info">
+  <i class="fas fa-location"></i>
+ <a href="https://www.google.com/maps/place/Havana+Hotel+%7C+Best+Hotel+in+Gorakhpur+%7C+Hotels+in+Gorakhpur/@26.735069,83.3750333,17z/data=!3m1!4b1!4m6!3m5!1s0x3991435dbb626fd1:0xe2acd272f2772a49!8m2!3d26.7350642!4d83.3776136!16s%2Fg%2F11xnn7r7bj?entry=ttu&g_ep=EgoyMDI2MDEwNy4wIKXMDSoASAFQAw%3D%3D" 
+   target="_blank">
+    Havana Hotel,
+    Deoria Bypass Road,
+    Near LIC Office,
+    Taramandal,
+    Gorakhpur, Uttar Pradesh – 273016
+  </a>
+</div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+<div style="position: fixed; bottom: 20px; right: 20px; z-index: 999;">
+  <a class="scroll-to-top scroll-to-target" data-target="html" style="cursor: pointer;">
+    <span class="fa fa-arrow-up" style="font-size: 22px; background: #e16912; color: #fff; padding: 10px 12px; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.3);"></span>
+  </a>
+</div>
+
+      <!--  Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="auto-container">
+          <div class="inner-container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="copyright-text">© Copyrights Hotel Havana.</div>
+            <div style="display: inline-flex; align-items: center; gap: 10px;">
+                        <span style="font-size: 15px;">Developed by <a href="https://www.shineinfosolutions.in/"
+  style="display:inline; color: rgb(225, 105, 18);">Shine Infosolutions</a></span>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--End Main Footer -->
+  </div><!-- End Page Wrapper -->
+
+  <!--script-->
+  <script>
+    const form = document.getElementById('form');
+    const result = document.getElementById('result');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
+      result.innerHTML = "Please wait..."
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: json
+      })
+        .then(async (response) => {
+          let json = await response.json();
+          if (response.status == 200) {
+            result.innerHTML = "Form submitted successfully";
+          } else {
+            console.log(response);
+            result.innerHTML = json.message;
+          }
+        })
+        .catch(error => {
+          console.log(error);
+          result.innerHTML = "Something went wrong!";
+        })
+        .then(function () {
+          form.reset();
+          setTimeout(() => {
+            result.style.display = "none";
+          }, 3000);
+        });
+    });
+  </script>
+    <script>
+        function filterGallery(category) {
+            const items = document.querySelectorAll('.gallery-item');
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.classList.add('show');
+                } else {
+                    item.classList.remove('show');
+                }
+            });
+        }
+
+        // Gallery Modal Functions
+        let slideIndex = 1;
+        const images = [
+            'images/gallery/1.jpg',
+            'images/gallery/2.jpg', 
+            'images/gallery/3.jpg',
+            'images/gallery/4.jpg',
+            'images/gallery/5.JPG',
+            'images/gallery/6.JPG',
+            'images/gallery/7.JPG',
+            'images/gallery/8.JPG',
+            'images/gallery/9.JPG',
+            'images/gallery/10.JPG',
+            'images/gallery/11.JPG',
+            'images/gallery/12.JPG',
+            'images/gallery/14.JPG',
+            'images/gallery/8.JPG',
+            'images/gallery/5.JPG'
+        ];
+
+        function openModal() {
+            document.getElementById('imageModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            if (n > images.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = images.length}
+            document.getElementById('modalImg').src = images[slideIndex-1];
+        }
+
+        // Close modal when clicking outside the image
+        window.onclick = function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(event) {
+            const modal = document.getElementById('imageModal');
+            if (modal.style.display === 'block') {
+                if (event.key === 'ArrowLeft') {
+                    plusSlides(-1);
+                } else if (event.key === 'ArrowRight') {
+                    plusSlides(1);
+                } else if (event.key === 'Escape') {
+                    closeModal();
+                }
+            }
+        });
+    </script>
+
+
+  <!--script end-->
+  <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script src="js/jquery.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.fancybox.js"></script>
+  <script src="js/slick.min.js"></script>
+  <script src="js/slick-animation.min.js"></script>
+  <script src="js/wow.js"></script>
+  <script src="js/appear.js"></script>
+  <script src="js/mixitup.js"></script>
+  <script src="js/flatpickr.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/script.js"></script>
+  
+</body>
+
+
+</html>
