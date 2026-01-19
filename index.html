@@ -20,6 +20,122 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
   <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+        <style>
+  /* Metallic Bronze-Gold Match (#aa8453) */
+  :root {
+    --havana-bronze: #aa8453; 
+    --havana-hover: #8e6d42; /* Hover ke liye thoda dark shade */
+  }
+
+  .call-to-action .sub-title {
+    color: var(--havana-bronze) !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  /* Heading Shine Animation */
+  .shine-heading {
+    background: linear-gradient(to right, #1a1a1a 20%, var(--havana-bronze) 50%, #1a1a1a 80%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: bronzeShine 3s linear infinite;
+    font-weight: 800;
+  }
+
+  @keyframes bronzeShine {
+    to { background-position: 200% center; }
+  }
+
+  /* --- Icon Hover Effect --- */
+  .call-to-action .icon-box i {
+    color: var(--havana-bronze) !important;
+    transition: all 0.4s ease; /* Smooth transition */
+  }
+
+  /* Jab poore block par hover ho toh icon ka color badle */
+  .call-to-action .call-block:hover .icon-box i {
+    color: var(--havana-hover) !important;
+    transform: scale(1.2) rotate(5deg); /* Thoda zoom aur rotate effect */
+  }
+
+  .call-to-action .call-block .title {
+    color: var(--havana-bronze);
+    font-weight: 700;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Hover par title ka color bhi thoda dark ho jaye */
+  .call-to-action .call-block:hover .title {
+    color: var(--havana-hover);
+  }
+
+  .call-to-action .call-block .text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+  }
+
+  /* Button Styling */
+  .call-to-action .form-submit button {
+    background: var(--havana-bronze) !important;
+    color: #fff !important;
+    border: none !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+  }
+
+  .call-to-action .form-submit button:hover {
+    background: var(--havana-hover) !important;
+    transform: translateY(-2px);
+  }
+    /* --- Base Gaps & Fixes --- */
+    .about-section img {
+      display: block; 
+      width: 100%;
+      height: auto !important;
+    }
+
+    /* --- TABLET VIEW FIX (768px to 1199px) --- */
+    @media (min-width: 768px) and (max-width: 1199px) {
+      .about-section {
+        padding-top: 120px !important; /* Yahan se Tablet me top padding badhayi gayi hai */
+        padding-bottom: 80px !important;
+      }
+      .about-section .features-grid {
+        grid-template-columns: 1fr 1fr !important; /* Tablet par side-by-side */
+        gap: 25px;
+      }
+      .about-section .image-column {
+        margin-bottom: 70px; /* Image aur content ke beech gap */
+      }
+      .about-section .quote-box {
+        position: absolute;
+        bottom: -30px;
+        right: 0 !important;
+        max-width: 300px !important;
+      }
+    }
+
+    /* --- MOBILE VIEW (Below 767px) --- */
+    @media (max-width: 767px) {
+      .about-section { padding: 50px 0 !important; }
+      .about-section h2 { font-size: 28px !important; }
+      .about-section .features-grid { grid-template-columns: 1fr !important; }
+      .about-section .quote-box {
+        position: relative !important;
+        right: auto !important;
+        bottom: auto !important;
+        margin-top: 40px;
+        max-width: 100% !important;
+      }
+    }
+
+    .about-section .image-box:hover img { transform: scale(1.05); }
+</style>
 </head>
 
 <body>
@@ -60,7 +176,7 @@
 
             <div class="logo"><a href="#">
                 
-            <a href="index.html"><img src="images/logo havana.png" width="120px" height="50px"  alt="logo"></a>
+            <a href="index.html"><img src="images/logo havana.PNG" width="120px" height="50px"  alt="logo"></a>
         </div>
               
           </div>
@@ -164,7 +280,7 @@
           <nav class="menu-box">
             <div class="upper-box">
               <div class="logo">
-                 <a href="index.html"><img src="images/logo havana.png" width="120px" height="50px"  alt="logo"></a>
+                 <a href="index.html"><img src="images/logo havana.PNG" width="120px" height="50px"  alt="logo"></a>
                 </div>
               <!----    <div class="nav-logo"><a href="#"><img src="images/logo-22.png" alt=""></a></div> -->
               <div class="close-btn"><i class="icon fa fa-times"></i></div>
@@ -223,7 +339,7 @@
 
                <div class="logo">
                 
-            <a href="index.html"><img src="images/logo havana.png" width="120px" height="50px"  alt="logo"></a>
+            <a href="index.html"><img src="images/logo havana.PNG" width="120px" height="50px"  alt="logo"></a>
         </div>
               <!----     <div class="logo">
                 <a href="index.html"><img src="images/logo-22.png" alt=""></a>
@@ -324,51 +440,7 @@
 
     <!-- About Section -->
 <section class="about-section pt-0" style="padding: 80px 0 60px 0; background: #1a1a1a;">
-  <style>
-    /* --- Base Gaps & Fixes --- */
-    .about-section img {
-      display: block; 
-      width: 100%;
-      height: auto !important;
-    }
-
-    /* --- TABLET VIEW FIX (768px to 1199px) --- */
-    @media (min-width: 768px) and (max-width: 1199px) {
-      .about-section {
-        padding-top: 120px !important; /* Yahan se Tablet me top padding badhayi gayi hai */
-        padding-bottom: 80px !important;
-      }
-      .about-section .features-grid {
-        grid-template-columns: 1fr 1fr !important; /* Tablet par side-by-side */
-        gap: 25px;
-      }
-      .about-section .image-column {
-        margin-bottom: 70px; /* Image aur content ke beech gap */
-      }
-      .about-section .quote-box {
-        position: absolute;
-        bottom: -30px;
-        right: 0 !important;
-        max-width: 300px !important;
-      }
-    }
-
-    /* --- MOBILE VIEW (Below 767px) --- */
-    @media (max-width: 767px) {
-      .about-section { padding: 50px 0 !important; }
-      .about-section h2 { font-size: 28px !important; }
-      .about-section .features-grid { grid-template-columns: 1fr !important; }
-      .about-section .quote-box {
-        position: relative !important;
-        right: auto !important;
-        bottom: auto !important;
-        margin-top: 40px;
-        max-width: 100% !important;
-      }
-    }
-
-    .about-section .image-box:hover img { transform: scale(1.05); }
-  </style>
+ 
 
   <div class="auto-container">
     <div class="row align-items-center">
@@ -650,7 +722,7 @@
         <div class="room-card-800">
           <div class="img-box"><img src="images/room/super-premium.jpg" alt="Super Premium Deluxe Room"><a href="super-premium-deluxe-room.html" class="book-btn-ref">Book Now</a></div>
           <div class="text-content">
-            <h5>Super Premium Deluxe Room</h5>
+            <h5 style="font-size: 15px;">Super Premium Deluxe Room</h5>
           <p>Designed for excellence, our Super Premium Deluxe Room combines luxury with personalized service for an unforgettable stay in Gorakhpur.</p>
   <div class="amenities-footer"><i class="fa fa-bed"></i><i class="fa fa-wifi"></i><i class="fa fa-car"></i><i class="fa fa-tv"></i><i class="fa fa-coffee"></i></div>
           </div>
@@ -661,7 +733,7 @@
         <div class="room-card-800">
           <div class="img-box"><img src="images/room/twin.jpg" alt="twin"><a href="premium-deluxe-twin-room.html" class="book-btn-ref">Book Now</a></div>
           <div class="text-content">
-            <h5>Premium Deluxe Twin Room</h5>
+            <h5 style="font-size: 15px;" >Premium Deluxe Twin Room</h5>
               <p>
     A sophisticated space tailored for the modern executive, featuring a full-sized work desk and premium high-speed internet.
   </p>   <div class="amenities-footer"><i class="fa fa-bed"></i><i class="fa fa-laptop"></i><i class="fa fa-wifi"></i><i class="fa fa-glass-martini"></i><i class="fa fa-coffee"></i></div>
@@ -673,7 +745,7 @@
         <div class="room-card-800">
           <div class="img-box"><img src="images/room/premium.jpg" alt="Royal Suite"><a href="premium-deluxe-room.html" class="book-btn-ref">Book Now</a></div>
           <div class="text-content">
-            <h4>Premium Deluxe Room</h4>
+            <h5>Premium Deluxe Room</h5>
            <p>
     The peak of grandeur, offering expansive floor plans, a private lounge area, and panoramic city views.
   </p>     <div class="amenities-footer"><i class="fa fa-bed"></i><i class="fa fa-bath"></i><i class="fa fa-tv"></i><i class="fa fa-city"></i><i class="fa fa-utensils"></i></div>
@@ -685,7 +757,7 @@
         <div class="room-card-800">
           <div class="img-box"><img src="images/room/standard.jpg" alt="Super Standard Room"><a href="super-standard-room.html" class="book-btn-ref">Book Now</a></div>
           <div class="text-content">
-            <h4>Super Standard Room</h4>
+            <h5>Super Standard Room</h5>
            <p style="color:#555; line-height:1.6;">
       Perfect for large groups, featuring interconnected rooms and world-class child-friendly amenities.
     </p>      <div class="amenities-footer"><i class="fa fa-bed"></i><i class="fa fa-wifi"></i><i class="fa fa-child"></i><i class="fa fa-utensils"></i><i class="fa fa-shield-alt"></i></div>
@@ -703,19 +775,7 @@
 
   </div>
 
-  <script>
-    const sliderContainer = document.getElementById('hotelSlider');
-    const indicatorBar = document.getElementById('progressBar');
 
-    sliderContainer.addEventListener('scroll', () => {
-      // Calculate how much has been scrolled
-      const scrollWidth = sliderContainer.scrollWidth - sliderContainer.clientWidth;
-      const scrolled = (sliderContainer.scrollLeft / scrollWidth) * 100;
-      
-      // Update the progress bar width
-      indicatorBar.style.width = scrolled + "%";
-    });
-  </script>
 </section>
     <!-- End pricing-section -->
 
@@ -725,79 +785,7 @@
     <section class="call-to-action pt-0">
       <div class="auto-container">
         <div class="row">
-      <style>
-  /* Metallic Bronze-Gold Match (#aa8453) */
-  :root {
-    --havana-bronze: #aa8453; 
-    --havana-hover: #8e6d42; /* Hover ke liye thoda dark shade */
-  }
 
-  .call-to-action .sub-title {
-    color: var(--havana-bronze) !important;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
-
-  /* Heading Shine Animation */
-  .shine-heading {
-    background: linear-gradient(to right, #1a1a1a 20%, var(--havana-bronze) 50%, #1a1a1a 80%);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: bronzeShine 3s linear infinite;
-    font-weight: 800;
-  }
-
-  @keyframes bronzeShine {
-    to { background-position: 200% center; }
-  }
-
-  /* --- Icon Hover Effect --- */
-  .call-to-action .icon-box i {
-    color: var(--havana-bronze) !important;
-    transition: all 0.4s ease; /* Smooth transition */
-  }
-
-  /* Jab poore block par hover ho toh icon ka color badle */
-  .call-to-action .call-block:hover .icon-box i {
-    color: var(--havana-hover) !important;
-    transform: scale(1.2) rotate(5deg); /* Thoda zoom aur rotate effect */
-  }
-
-  .call-to-action .call-block .title {
-    color: var(--havana-bronze);
-    font-weight: 700;
-    margin-bottom: 8px;
-    transition: all 0.3s ease;
-  }
-  
-  /* Hover par title ka color bhi thoda dark ho jaye */
-  .call-to-action .call-block:hover .title {
-    color: var(--havana-hover);
-  }
-
-  .call-to-action .call-block .text {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #444;
-  }
-
-  /* Button Styling */
-  .call-to-action .form-submit button {
-    background: var(--havana-bronze) !important;
-    color: #fff !important;
-    border: none !important;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-  }
-
-  .call-to-action .form-submit button:hover {
-    background: var(--havana-hover) !important;
-    transform: translateY(-2px);
-  }
-</style>
 
 <div class="content-colum col-lg-6 col-md-12 col-sm-12">
   <div class="inner-column wow fadeInLeft">
@@ -910,7 +898,7 @@
               <h4 class="title">Sunny Verma</h4>
 
               <div class="image-box">
-                <figure class="image wow fadeInUp"><img src="images/comment/c 02.png" alt=""></figure>
+                <figure class="image wow fadeInUp"><img src="images/comment/1.png" width="100px" height="100px" alt=""></figure>
 
               </div>
               <div class="text">Excellent service, peaceful ambience, delicious food — Hotel Havana is always the first
@@ -926,7 +914,7 @@
               <h4 class="title">Aditya Yadav</h4>
 
               <div class="image-box">
-                <figure class="image wow fadeInUp"><img src="images/comment/c 03.png" alt=""></figure>
+                <figure class="image wow fadeInUp"><img src="images/comment/2.png" width="100px" height="100px" alt=""></figure>
                 <!---- <i class="icon fa fa-circle-check"></i> -->
               </div>
               <div class="text">Best hotel in Gorakhpur! Loved the food, ambience, and service. Will definitely come
@@ -1114,7 +1102,7 @@
               <div class="footer-widget about-widget wow fadeInLeft">
                 <div class="widget-content">
                   <div class="logo">
-                   <a href="index.html"><img src="images/logo havana.png" width="150px" height="60px"  alt="logo"></a>
+                   <a href="index.html"><img src="images/logo havana.PNG" width="150px" height="60px"  alt="logo"></a>
                  </div>
 
                   <!----   <div class="logo"><a href="#"> <img src="images/logo-22.png" alt=""></a></div>-->
@@ -1284,6 +1272,49 @@
         });
     });
   </script>
+    <script>
+    const sliderContainer = document.getElementById('hotelSlider');
+    const indicatorBar = document.getElementById('progressBar');
+    const slides = document.querySelectorAll('.room-slide');
+    let currentSlide = 0;
+    let autoSlideInterval;
+
+    // Auto slide function
+    function autoSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      const slideWidth = slides[0].offsetWidth + 20; // card width + gap
+      sliderContainer.scrollTo({
+        left: currentSlide * slideWidth,
+        behavior: 'smooth'
+      });
+    }
+
+    // Start auto slide
+    function startAutoSlide() {
+      autoSlideInterval = setInterval(autoSlide, 2000); // 3 seconds
+    }
+
+    // Stop auto slide
+    function stopAutoSlide() {
+      clearInterval(autoSlideInterval);
+    }
+
+    // Update progress bar
+    function updateProgressBar() {
+      const scrollWidth = sliderContainer.scrollWidth - sliderContainer.clientWidth;
+      const scrolled = (sliderContainer.scrollLeft / scrollWidth) * 100;
+      indicatorBar.style.width = scrolled + "%";
+    }
+
+    // Event listeners
+    sliderContainer.addEventListener('scroll', updateProgressBar);
+    sliderContainer.addEventListener('mouseenter', stopAutoSlide);
+    sliderContainer.addEventListener('mouseleave', startAutoSlide);
+
+    // Start auto slide when page loads
+    startAutoSlide();
+  </script>
+  
   <!--script end-->
   <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
   <script src="js/jquery.js"></script>
