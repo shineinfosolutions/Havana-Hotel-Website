@@ -135,6 +135,282 @@
     }
 
     .about-section .image-box:hover img { transform: scale(1.05); }
+
+      .hotel-hero-slider { font-family: 'Poppins', sans-serif; }
+
+    /* --- Slider Track --- */
+    .slider-container {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 40px;
+      padding: 10px 40px 40px; 
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none; /* Firefox scrollbar hide */
+    }
+    .slider-container::-webkit-scrollbar { display: none; } /* Chrome/Safari scrollbar hide */
+
+    /* --- 800PX ULTRA-WIDE CARD --- */
+    .room-card-800 {
+      flex: 0 0 800px; 
+      background: #111;
+      border: 1px solid #1a1a1a;
+      scroll-snap-align: center;
+      transition: all 0.5s ease;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    
+    .room-card-800:hover { border-color: #aa8453; }
+
+    .room-card-800 .img-box {
+      position: relative;
+      height: 350px; 
+      overflow: visible;
+    }
+
+    .room-card-800 .img-box img {
+      width: 100%; height: 100%; object-fit: cover;
+      display: block; filter: brightness(0.85);
+    }
+
+    /* Reference Style Button */
+    .room-card-800 .book-btn-ref {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      background: #724b2e;
+      color: #fff;
+      padding: 15px 60px;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      text-decoration: none;
+      z-index: 10;
+      min-width: 250px;
+      text-align: center;
+      letter-spacing: 1.5px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    }
+
+    .room-card-800 .text-content {
+      padding: 40px 50px 0px; 
+      text-align: center;
+      flex-grow: 1;
+    }
+
+    .room-card-800 h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .room-card-800 p {
+      font-size: 14px;
+      color: #888;
+      line-height: 1.6;
+      margin-bottom: 10px;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .room-card-800 .amenities-footer {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 20px 0;
+      border-top: 1px solid #1f1f1f;
+      color: #444;
+      font-size: 22px;
+    }
+    .room-card-800:hover .amenities-footer { color: #aa8453; }
+
+    /* --- ADDED: SCROLL INDICATOR UI --- */
+    .scroll-indicator-wrapper {
+      width: 200px; /* Width of the track */
+      height: 3px;
+      background: #222;
+      margin: 30px auto 0;
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .scroll-indicator-bar {
+      width: 0%; /* Initially 0, controlled by JS */
+      height: 100%;
+      background: #aa8453; /* Premium Gold Color */
+      transition: width 0.1s linear;
+    }
+
+    @media (max-width: 991px) {
+      .room-card-800 { flex: 0 0 90%; }
+      .room-card-800 .img-box { height: 250px; }
+      .room-card-800 h3 { font-size: 24px; }
+    }
+ /* Main Hero Section */
+.banner-section-two {
+    position: relative;
+    height: 90vh;
+    overflow: hidden;
+}
+
+
+/* Background */
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    animation: slowZoom 18s ease-in-out infinite;
+}
+
+
+/* Gold-tinted overlay */
+.banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        rgba(0,0,0,0.55),
+        rgba(0,0,0,0.75)
+    );
+    backdrop-filter: blur(2px);
+    z-index: 2;
+}
+
+/* Luxury Content Container (Left Align) */
+.banner-content.luxury {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+   animation: none;
+
+}
+
+/* Subtitle */
+.banner-content .sub-title {
+    font-size: 15px;
+    letter-spacing: 4px;
+    color: #cd8c39;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    display: inline-block;
+}
+
+/* Luxury Serif Heading */
+.banner-content h1 {
+    font-family: "Georgia", serif;
+    font-size: 60px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    text-shadow: 0 8px 35px rgba(0,0,0,0.8);
+}
+
+/* GOLD BUTTON */
+.btn-gold {
+    background: #cd8c39;
+    color: #ffffff;
+    padding: 14px 42px;
+    font-weight: 600;
+    border-radius: 3px;
+    border: 1px solid #cd8c39;
+    letter-spacing: 1px;
+    transition: 0.3s ease-in-out;
+    font-size: 15px;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+/* Button Hover */
+.btn-gold:hover {
+    background: transparent;
+    color: #cd8c39;
+    border-color: #cd8c39;
+    box-shadow: 0 0 12px rgba(205,140,57,0.6);
+}
+
+/* Slow Background Zoom */
+@keyframes slowZoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.12); }
+}
+
+/* Fade-up animation */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    .banner-content.luxury {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) !important;
+        animation: none !important;   /* ❌ slide fix */
+    }
+
+    .banner-content h1 {
+        font-size: 25px;
+    }
+
+    .banner-content .sub-title {
+        font-size: 13px;
+    }
+}
+/* Desktop Default — Show Landscape */
+.desktop-video {
+  display: block;
+}
+.mobile-video {
+  display: none;
+}
+
+/* Mobile — Show Portrait */
+@media (max-width: 767px) {
+  .desktop-video {
+    display: none;
+  }
+  .mobile-video {
+    display: block;
+  }
+}
+
+/* Background Video Fit */
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+
+
 </style>
 </head>
 
@@ -308,10 +584,10 @@
              
             </ul>
             <ul class="social-links">
-              <li><i class="fa-brands fa-instagram"></i></li>
+            
               <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-              <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
-              <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+ 
+              <li><a href="https://www.instagram.com/hotelhavanagkp?igsh=MThnZDFyeThpMzl3Ng=="><i class="fab fa-instagram"></i></a></li>
             </ul>
           </nav>
         </div><!-- End Mobile Menu -->
@@ -364,43 +640,33 @@
     <!--End Main Header -->
 
     <!-- banner section two -->
-    <section class="banner-section-two">
-      <div class="banner-slider">
-        <div class="banner-slide-v2">
-          <div class="outer-box">
-            <figure class="image wow fadeInUp"><img src="images/banner/banner-2.jpg" alt=""></figure>
-            <div class="content-box">
-              <span class="sub-title" data-animation-in="fadeInUp" data-delay-in="0.1"> Welcome to Hotel Havana
-              </span>
-              <h1 data-animation-in="fadeInUp" data-delay-in="0.3">life enjoy with <br>the great moments</h1>
-              <a href="page-rooms.html" class="btn" data-animation-in="fadeInUp" data-delay-in="0.5">rooms & suites</a>
-            </div>
-          </div>
-        </div>
-        <div class="banner-slide-v2">
-          <div class="outer-box">
-            <figure class="image wow fadeInUp"><img src="images/banner/banner-3.jpg" alt=""></figure>
-            <div class="content-box">
-              <span class="sub-title" data-animation-in="fadeInUp" data-delay-in="0.1"> Welcome to Hotel Havana
-              </span>
-              <h1 data-animation-in="fadeInUp" data-delay-in="0.3">life enjoy with <br>the great moments</h1>
-              <a href="page-rooms.html" class="btn" data-animation-in="fadeInUp" data-delay-in="0.5">rooms & suites</a>
-            </div>
-          </div>
-        </div>
-        <div class="banner-slide-v2">
-          <div class="outer-box">
-            <figure class="image wow fadeInUp"><img src="images/banner/banner-2.jpg" alt=""></figure>
-            <div class="content-box">
-              <span class="sub-title" data-animation-in="fadeInUp" data-delay-in="0.1"> Welcome to Hotel Havana
-              </span>
-              <h1 data-animation-in="fadeInUp" data-delay-in="0.3">life enjoy with <br>the great moments</h1>
-              <a href="page-rooms.html" class="btn" data-animation-in="fadeInUp" data-delay-in="0.5">rooms & suites</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<section class="banner-section-two">
+  <div class="banner-bg">
+
+    <!-- Desktop Landscape Video -->
+    <video class="bg-video desktop-video" autoplay muted loop playsinline>
+      <source src="images/banner/Landscape.mp4" type="video/mp4">
+    </video>
+
+    <!-- Mobile Portrait Video -->
+    <video class="bg-video mobile-video" autoplay muted loop playsinline>
+      <source src="images/banner/Portrait.mp4" type="video/mp4">
+    </video>
+
+    <!-- GOLD GLASS OVERLAY -->
+    <div class="banner-overlay"></div>
+
+    <!-- CONTENT -->
+    <div class="banner-content luxury">
+      <span class="sub-title">WELCOME TO HOTEL HAVANA</span>
+      <h1>LIFE ENJOY WITH <br>THE GREAT MOMENTS</h1>
+      <a href="page-rooms.html" class="btn-gold">Rooms & Suites</a>
+    </div>
+
+  </div>
+</section>
+
+
     <!-- End banner section -->
 
     <!---<div class="checkout-form-section v2 wow slideInUp">
@@ -456,7 +722,7 @@
             <div class="image-box" style="position: relative; border-radius: 20px; overflow: hidden; z-index: 2; background: #1a1a1a;">
               <figure class="image wow fadeInUp" style="margin: 0;">
                 <img src="images/banner/receptions.JPG" alt="Hotel Havana Gorakhpur" style="width: 100%; transition: all 0.6s ease; filter: brightness(1.1);">
-                <div class="luxury-badge" style="position: absolute; top: 20px; left: 20px; background: rgba(199,138,54,0.95); color: #fff; padding: 8px 16px; border-radius: 25px; font-size: 12px; font-weight: 700; text-transform: uppercase;">
+                <div class="luxury-badge" style="position: absolute; top: 5px; left: 5px; background: rgba(199,138,54,0.95); color: #fff; padding: 8px 16px; border-radius: 25px; font-size: 12px; font-weight: 700; text-transform: uppercase;">
                   <i class="fa fa-crown" style="margin-right: 5px;"></i>Premium Suite
                 </div>
               </figure>
@@ -587,127 +853,9 @@
     <!-- End news section -->
 
     <!-- pricing-section-two -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <section class="hotel-hero-slider" style="padding: 60px 0; background: #000; overflow: hidden;">
-  <style>
-    .hotel-hero-slider { font-family: 'Poppins', sans-serif; }
-
-    /* --- Slider Track --- */
-    .slider-container {
-      display: flex;
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      gap: 40px;
-      padding: 10px 40px 40px; 
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none; /* Firefox scrollbar hide */
-    }
-    .slider-container::-webkit-scrollbar { display: none; } /* Chrome/Safari scrollbar hide */
-
-    /* --- 800PX ULTRA-WIDE CARD --- */
-    .room-card-800 {
-      flex: 0 0 800px; 
-      background: #111;
-      border: 1px solid #1a1a1a;
-      scroll-snap-align: center;
-      transition: all 0.5s ease;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
-    
-    .room-card-800:hover { border-color: #aa8453; }
-
-    .room-card-800 .img-box {
-      position: relative;
-      height: 350px; 
-      overflow: visible;
-    }
-
-    .room-card-800 .img-box img {
-      width: 100%; height: 100%; object-fit: cover;
-      display: block; filter: brightness(0.85);
-    }
-
-    /* Reference Style Button */
-    .room-card-800 .book-btn-ref {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translate(-50%, 50%);
-      background: #724b2e;
-      color: #fff;
-      padding: 15px 60px;
-      font-size: 14px;
-      font-weight: 600;
-      text-transform: uppercase;
-      text-decoration: none;
-      z-index: 10;
-      min-width: 250px;
-      text-align: center;
-      letter-spacing: 1.5px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
-    }
-
-    .room-card-800 .text-content {
-      padding: 40px 50px 0px; 
-      text-align: center;
-      flex-grow: 1;
-    }
-
-    .room-card-800 h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 32px;
-      color: #fff;
-      margin-bottom: 10px;
-    }
-
-    .room-card-800 p {
-      font-size: 14px;
-      color: #888;
-      line-height: 1.6;
-      margin-bottom: 10px;
-      max-width: 650px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .room-card-800 .amenities-footer {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 20px 0;
-      border-top: 1px solid #1f1f1f;
-      color: #444;
-      font-size: 22px;
-    }
-    .room-card-800:hover .amenities-footer { color: #aa8453; }
-
-    /* --- ADDED: SCROLL INDICATOR UI --- */
-    .scroll-indicator-wrapper {
-      width: 200px; /* Width of the track */
-      height: 3px;
-      background: #222;
-      margin: 30px auto 0;
-      position: relative;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    .scroll-indicator-bar {
-      width: 0%; /* Initially 0, controlled by JS */
-      height: 100%;
-      background: #aa8453; /* Premium Gold Color */
-      transition: width 0.1s linear;
-    }
-
-    @media (max-width: 991px) {
-      .room-card-800 { flex: 0 0 90%; }
-      .room-card-800 .img-box { height: 250px; }
-      .room-card-800 h3 { font-size: 24px; }
-    }
-  </style>
+ 
 
   <div class="auto-container">
     <div class="text-center" style="margin-bottom: 20px;">
@@ -894,7 +1042,7 @@
           <!-- client-block -->
           <div class="client-block col-lg-4 col-sm-6">
             <div class="inner-box wow fadeInLeft">
-              <h4 class="title">Sunny Verma</h4>
+              <h4 class="title">Alok Verma</h4>
 
               <div class="image-box">
                 <figure class="image wow fadeInUp"><img src="images/comment/1.png" width="100px" height="100px" alt=""></figure>
@@ -1108,9 +1256,7 @@
                   <div class="text"> Welcome to Hotel Havana.<br>We believe in offering every guest a stay filled with comfort, peace, and respect. </div>
                   <ul class="social-icon-two">
                     <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-instagram"></i> </a></li>
-                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                    <li><a href="https://www.instagram.com/hotelhavanagkp?igsh=MThnZDFyeThpMzl3Ng=="><i class="fa-brands fa-instagram"></i></a></li>
                   </ul>
                 </div>
               </div>
